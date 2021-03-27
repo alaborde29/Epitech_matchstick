@@ -11,5 +11,6 @@
 int matchstick(int n_line, int n_match)
 {
     char **map = map_generator(n_line);
-    return (0);
+
+    return (game_loop(map, n_line, n_match));
 }

@@ -9,7 +9,7 @@ int my_str_isnum(char const *str)
 {
     if (str[0] == '\0')
         return (1);
-    for (int i = 0; str[i] != '\0'; i++) {
+    for (int i = 0; str[i] != '\0' && str[i] != '\n'; i++) {
         if (str[i] < '0' || str[i] > '9')
             return (0);
     }

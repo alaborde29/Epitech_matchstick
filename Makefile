@@ -5,10 +5,15 @@
 ## Makefile
 ##
 
-SRC		=	src/main.c				\
-			src/matchstick.c		\
-			src/error.c				\
-			src/map_generator.c		\
+SRC		=	src/error.c					\
+			src/game_status.c			\
+			src/game.c					\
+			src/ia_turn.c				\
+			src/main.c					\
+			src/map_generator.c			\
+			src/matchstick.c			\
+			src/play_move.c				\
+			src/player_turn.c			\
 
 OBJ		=	$(SRC: .c=.o)
 
