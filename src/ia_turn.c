@@ -17,7 +17,7 @@ int get_random(int n)
 
     while (i != n) {
         temp = random();
-        if ((temp / 2) == 1)
+        if ((temp % 2) == 1)
             res = res + 1;
         i++;
     }
