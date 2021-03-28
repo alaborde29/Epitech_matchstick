@@ -78,6 +78,5 @@ char **map_generator(int n_line)
     map[i] = 0;
     put_border_in_tab(map, n_line);
     fill_map(map, n_line);
-    my_show_word_array(map);
     return (map);
 }
