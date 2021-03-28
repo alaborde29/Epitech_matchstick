@@ -30,7 +30,6 @@ int game_statut(char **map, int player)
         n = n + find_match_in_str(map[i]);
         i++;
     }
-    my_put_nbr(n);
     if (n == 0 && player == 1)
         return (1);
     if (n == 0 && player == 2)
