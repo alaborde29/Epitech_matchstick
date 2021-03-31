@@ -31,8 +31,8 @@ int game_statut(char **map, int player)
         i++;
     }
     if (n == 0 && player == 1)
-        return (1);
-    if (n == 0 && player == 2)
         return (2);
+    if (n == 0 && player == 2)
+        return (1);
     return (0);
 }
