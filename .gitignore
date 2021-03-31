@@ -2,6 +2,7 @@ lib/libmy.a
 lib/my/need_to_finish.txt
 *.o
 lib/my/*.o
+lib/my/libmy.a
 vgcore.*
 lib/my/build.sh
 .vscode/
