@@ -9,6 +9,7 @@ SRC		=	src/error.c					\
 			src/game_status.c			\
 			src/game.c					\
 			src/ia_turn.c				\
+			src/input_error.c			\
 			src/main.c					\
 			src/map_generator.c			\
 			src/matchstick.c			\
