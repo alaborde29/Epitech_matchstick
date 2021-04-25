@@ -17,6 +17,17 @@ void print_victory_message(int exit)
         my_putstr("You lost, too bad...\n");
 }
 
+int player_loop(char **map, int n_line, int n_match, int ctrld)
+{
+    my_putstr("Your turn:\n");
+    ctrld = player_turn(map, n_line, n_match);
+    while (ctrld == -1)
+        ctrld = player_turn(map, n_line, n_match);
+    if (ctrld == -2)
+        return (-2);
+    return (0);
+}
+
 int game_loop(char **map, int n_line, int n_match)
 {
     int exit = 0;
@@ -27,13 +38,10 @@ int game_loop(char **map, int n_line, int n_match)
         exit = game_statut(map, 2);
         if (exit != 0)
             break;
-        my_putstr("Your turn:\n");
-        ctrld = player_turn(map, n_line, n_match);
-        while (ctrld == -1)
-            ctrld = player_turn(map, n_line, n_match);
+        ctrld = player_loop(map, n_line, n_match, ctrld);
         if (ctrld == -2)
             return (0);
-        my_show_word_array(map);
+    my_show_word_array(map);
         exit = game_statut(map, 1);
         if (exit != 0)
             break;

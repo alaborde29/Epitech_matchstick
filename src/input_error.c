@@ -27,13 +27,17 @@ int analyze_line_move(char *move, char **map, playturn_info_t info)
 int match_error(char **map, int line, int n_match)
 {
     int n = 0;
+    int i = n_match;
 
     if (n_match == 0) {
         my_putstr("Error: you have to remove at least one match\n");
         return (-1);
     }
-    while (map[line][n] != '\n' && map[line][n] != '\0')
-        n++;
+    while (map[line][i] != '\0') {
+        if (map[line][i] == '|')
+            n++;
+        i++;
+    }
     if (n < n_match) {
         my_putstr("Error: not enough matches on this line\n");
         return (-1);
@@ -47,7 +51,7 @@ int analyze_match_move(char *move, char **map, playturn_info_t info)
         my_putstr("Error: invalid input (positive number expected)\n");
         return (-1);
     }
-    if ((info.getline_error == -1 || my_getnbr(move) <= 0 || \
+    if ((info.getline_error == -1 || my_getnbr(move) < 0 || \
     my_getnbr(move) > info.limit.n_match)) {
         my_putstr("You cannot remove more than ");
         my_put_nbr(info.limit.n_match);
