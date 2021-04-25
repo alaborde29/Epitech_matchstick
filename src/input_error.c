@@ -10,14 +10,14 @@
 
 int analyze_line_move(char *move, char **map, playturn_info_t info)
 {
+    if (info.getline_error == -1)
+            return (-1);
     if (my_str_isnum(move) == 0) {
         my_putstr("Error: invalid input (positive number expected)\n");
         return (-1);
     }
     if ((info.getline_error == -1 || my_getnbr(move) <= 0 || \
     my_getnbr(move) > info.limit.n_line)) {
-        if (info.getline_error == -1)
-            my_putchar('\n');
         my_putstr("Error: this line is out of range\n");
         return (-1);
     }
@@ -47,6 +47,8 @@ int match_error(char **map, int line, int n_match)
 
 int analyze_match_move(char *move, char **map, playturn_info_t info)
 {
+    if (info.getline_error == -1)
+            return (-1);
     if (my_str_isnum(move) == 0) {
         my_putstr("Error: invalid input (positive number expected)\n");
         return (-1);
