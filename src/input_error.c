@@ -27,7 +27,7 @@ int analyze_line_move(char *move, char **map, playturn_info_t info)
 int match_error(char **map, int line, int n_match)
 {
     int n = 0;
-    int i = n_match;
+    int i = 0;
 
     if (n_match == 0) {
         my_putstr("Error: you have to remove at least one match\n");
