@@ -18,7 +18,7 @@ int error_handling(int ac, char **av)
         return (84);
     if (my_getnbr(av[1]) < 1 || my_getnbr(av[1]) > 10)
         return (84);
-    if (my_getnbr(av[1]) < 1)
+    if (my_getnbr(av[2]) < 1 || my_getnbr(av[2]) > 21)
         return (84);
     return (0);
 }
