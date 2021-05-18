@@ -5,6 +5,22 @@
 ## Makefile
 ##
 
+TSRC	=	tests/Test_matchstick.c		\
+			src/error.c					\
+			src/game_status.c			\
+			src/game.c					\
+			src/ia_turn.c				\
+			src/input_error.c			\
+			src/map_generator.c			\
+			src/matchstick.c			\
+			src/play_move.c				\
+			src/player_turn.c			\
+
+
+TOBJ	=	$(TSRC: .c=.o)
+
+NAME	= 	tests_matchstick			\
+
 SRC		=	src/error.c					\
 			src/game_status.c			\
 			src/game.c					\
@@ -27,10 +43,20 @@ $(NAME):	$(OBJ)
 			gcc -g -o $(NAME) $(OBJ) -Llib -lmy -Iinclude
 
 clean:
-		rm -f *.o
+			rm -f *.o
+			rm -f *.gcno
+			rm -f *.gcda
 
-fclean: clean
-		rm -f $(NAME)
-		make fclean -C lib/my
+fclean: 	clean
+			rm -f $(NAME)
+			rm -f $(TNAME)
+			make fclean -C lib/my
 
-re:		fclean all
+re:			fclean all
+
+test_run:	$(TOBJ)
+			make -C lib/my
+			gcc -o tests_matchstick $(TOBJ) -Llib -lmy -Iinclude -lcriterion --coverage
+			./tests_matchstick
+			gcovr --exclude/tests
+			gcovr --exclude/tests --branches

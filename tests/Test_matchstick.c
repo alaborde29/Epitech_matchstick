@@ -10,19 +10,8 @@
 
 Test(check_victory, not_win)
 {
-    char *map[] = {"+++++++++",
-                "|.......|",
-                "|.......|",
-                "|.......|",
-                "|.......|",
-                "+++++++++"};
-    connect_t connect;
-    int result = 0;
+    int ac = 1;
+    char **av = 0;
 
-    connect.player_one = 'X';
-    connect.player_two = 'O';
-    connect.size_x = my_strlen(map[1]) - 2;
-    connect.size_y = 6;
-    result = check_victory(map, connect);
-    cr_assert_eq(result, 0);
+    cr_assert_eq(-1, error_handling(ac, av));
 }

@@ -7,3 +7,4 @@ vgcore.*
 lib/my/build.sh
 .vscode/
 matchstick
+*.gc*
