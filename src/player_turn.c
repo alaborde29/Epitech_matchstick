@@ -18,6 +18,16 @@ limit_t init_limit(int n_line, int n_match)
     return (limit);
 }
 
+void print_turn(int match, int line, char **map)
+{
+    my_putstr("Player removed ");
+    my_put_nbr(match);
+    my_putstr(" match(es) from line ");
+    my_put_nbr(line);
+    my_putchar('\n');
+    my_show_word_array(map);
+}
+
 playturn_info_t init_playturn_info(int n_line, int n_match)
 {
     playturn_info_t info;
@@ -50,5 +60,6 @@ int player_turn(char **map, int n_line, int n_match)
         return (-1);
     }
     play_move(map, my_getnbr(info.line), my_getnbr(info.match));
+    print_turn(my_getnbr(info.line), my_getnbr(info.match), map);
     return (0);
 }

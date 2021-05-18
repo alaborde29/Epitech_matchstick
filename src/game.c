@@ -41,12 +41,10 @@ int game_loop(char **map, int n_line, int n_match)
         ctrld = player_loop(map, n_line, n_match, ctrld);
         if (ctrld == -2)
             return (0);
-    my_show_word_array(map);
         exit = game_statut(map, 1);
         if (exit != 0)
             break;
         ia_turn(map, n_line, n_match);
-        my_show_word_array(map);
     }
     print_victory_message(exit);
     return (exit);

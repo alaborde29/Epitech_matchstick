@@ -84,4 +84,5 @@ void ia_turn(char **map, int n_line, int n_match)
     my_put_nbr(line);
     my_putchar('\n');
     play_move(map, line, match);
+    my_show_word_array(map);
 }
