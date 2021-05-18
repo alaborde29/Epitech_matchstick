@@ -5,7 +5,7 @@
 ** matchstick
 */
 
-#include <stdio.h>
+#include <stddef.h>
 
 #ifndef MATCHSTICK_H_
 #define MATCHSTICK_H_
@@ -14,6 +14,7 @@ typedef struct limit_s
 {
     int n_line;
     int n_match;
+    
 }limit_t;
 
 typedef struct playturn_info_s
