@@ -58,5 +58,5 @@ test_run:	$(TOBJ)
 			make -C lib/my
 			gcc -o tests_matchstick $(TOBJ) -Llib -lmy -Iinclude -lcriterion --coverage
 			./tests_matchstick
-			gcovr --exclude/tests
-			gcovr --exclude/tests --branches
+			gcovr --exclude tests
+			gcovr --exclude tests --branches
