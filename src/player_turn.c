@@ -42,7 +42,7 @@ int player_turn(char **map, int n_line, int n_match)
         my_putstr("Line: ");
         info.getline_error = getline(&info.line, &info.buff_size, stdin);
     }
-    my_putstr("Match: ");
+    my_putstr("Matches: ");
     info.getline_error = getline(&info.match, &info.buff_size, stdin);
     while (analyze_match_move(info.match, map, info) != 0) {
         if (info.getline_error == -1)
