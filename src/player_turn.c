@@ -21,9 +21,9 @@ limit_t init_limit(int n_line, int n_match)
 void print_turn(int match, int line, char **map)
 {
     my_putstr("Player removed ");
-    my_put_nbr(match);
-    my_putstr(" match(es) from line ");
     my_put_nbr(line);
+    my_putstr(" match(es) from line ");
+    my_put_nbr(match);
     my_putchar('\n');
     my_show_word_array(map);
 }
