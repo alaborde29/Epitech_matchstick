@@ -12,5 +12,5 @@ int matchstick(int n_line, int n_match)
 {
     char **map = map_generator(n_line);
 
-    my_show_word_array(map);
+    return (game_loop(map, n_line, n_match));
 }
