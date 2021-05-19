@@ -9,6 +9,18 @@
 #include "matchstick.h"
 #include <stdlib.h>
 
+int find_max_line_size(int n_line)
+{
+    int i = 0;
+    int n = 1;
+
+    while (i != n_line) {
+        n = n + 2;
+        i++;
+    }
+    return (n);
+}
+
 void print_victory_message(int exit)
 {
     if (exit == 1)

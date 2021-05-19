@@ -69,6 +69,8 @@ void ia_turn(char **map, int n_line, int n_match)
     int line = 0;
     int match = 0;
 
+    if (find_max_line_size(n_line) < n_match)
+        n_match = find_max_line_size(n_line);
     my_putstr("AI's turn...\n");
     while (is_line_empty(map, line) == 1)
         line = get_random(n_line);

@@ -26,7 +26,7 @@ typedef struct playturn_info_s
     limit_t limit;
 }playturn_info_t;
 
-
+int find_max_line_size(int n_line);
 int error_handling(int ac, char **av);
 int matchstick(int n_line, int n_match);
 char **map_generator(int n_line);
